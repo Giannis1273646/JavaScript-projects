@@ -21,11 +21,10 @@ function rot13(str) {
   for(let i=0; i<str.length; i++){
     //First we take each letter from the string
     var letter = str.charAt(i);
-
+	  
     //Find the gap in the sentence and add it to the table with the letters we have shifted 
     if(regex.test(str.charAt(i))){
         str1.push(str.charAt(i));
-
       //Check if we have other symbols in the sentence and add them to the final table 
       }else if(regex1.test(str.charAt(i))){
         str1.push(str.charAt(i));
@@ -34,8 +33,7 @@ function rot13(str) {
     //We are looking to find the position of the letter in the alphabet 
     for(let j=0;j<alphabet.length; j++){
       if(letter===alphabet.charAt(j)){
-        test = j+13;
-		
+        test = j+13;	
         //We calculate if the total displacement is greater than the length of the alphabet
         for(var q=j; q<=test; q++){
           //If it is we start counting the letters from the beginning of the alphabet
@@ -47,8 +45,7 @@ function rot13(str) {
           }
           //Pass the final position of the letter after the shift 
           test1=q;
-        }  
-		
+        }  	
         //Insert the letter in the final list
         str1.push(alphabet.charAt(test1));
       }
