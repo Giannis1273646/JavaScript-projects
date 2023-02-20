@@ -17,7 +17,6 @@ Your job is to validate or reject the US phone number based on any combination o
 The area code is required. If the country code is provided, you must confirm that the country code is 1. 
 Return true if the string is a valid US phone number; otherwise return false.*/
 
-
 function telephoneCheck(str) {
   //To discard all symbols except brackets 
   var regex = /^[?,&,*,!,#,;]/;
@@ -62,18 +61,15 @@ function telephoneCheck(str) {
     //If it is indeed a number, add it to the table of numbers
     if(numRegex.test(str.charAt(i))){
       numbers.push(str.charAt(i));
-	  
-	//if it has letters or symbols returns false
+    //if it has letters or symbols returns false
     }else if(nonNumRegex.test(str.charAt(i)) || regex.test(str.charAt(i))){
       return false;
-	  
-	//if it has found parentheses in a position other than allowed returns false
+    //if it has found parentheses in a position other than allowed returns false
     }else if(regex1.test(str.charAt(i))){
       if(!found){
         return false;
       }
     }
-    
   }
 
   //We check to see if we actually have a ten-digit number
@@ -83,7 +79,6 @@ function telephoneCheck(str) {
     //console.log("numbers lenght = " +Object.keys(numbers).length)
     return false;
   }
- 
 }
 
 var test = telephoneCheck("55 55-55-555-5");
